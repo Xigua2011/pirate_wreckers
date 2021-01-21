@@ -15,9 +15,5 @@ func _ready():
 #func _process(delta):
 #	pass
 
-
-
-# warning-ignore:unused_argument
-func _on_pirate_officer_area_entered(area):
-	$AnimationPlayer.play("Head off")
-	#queue_free() # Replace with function body.
+func _on_pirate_captain_area_entered(area):
+	$AnimationPlayer.play("Legs off")
