@@ -347,7 +347,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.88765e-15, 0.77952, -7.2191
 shape = SubResource( 19 )
 
 [node name="legs" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, -0.0575119, 0.998345, 0, -0.998345, -0.0575119, -0.702509, 0.107369, 0 )
 
 [node name="legRight" type="MeshInstance" parent="legs"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.155232, 0.40656, 1.86265e-09 )
@@ -365,7 +365,7 @@ material/1 = null
 "anims/Legs off" = SubResource( 20 )
 
 [node name="Body" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 1, 0, 0, 0, 0.069739, -0.997565, 0, 0.997565, 0.069739, 0, 0.0792445, 0 )
 
 [node name="armRight" type="MeshInstance" parent="Body"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.168, 0.70452, 0 )
