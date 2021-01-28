@@ -5,4 +5,10 @@
 [node name="ship_light" instance=ExtResource( 1 )]
 
 [node name="ship_light_8angles" parent="." index="0"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.715098, 2.14769e-14, 0.0144567 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.71944, -0.018459, 0.0142736 )
+
+[node name="cannon_right 1 3" parent="ship_light_8angles/cannon_right 1" index="1"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.217236, 0.1284, 0.262179 )
+
+[node name="steering 1" parent="ship_light_8angles" index="6"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.77593, 1.05056 )
