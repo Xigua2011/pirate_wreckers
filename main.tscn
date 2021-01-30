@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=18 format=2]
 
 [ext_resource path="res://vr/VR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Big_Ship.tscn" type="PackedScene" id=2]
@@ -10,7 +10,8 @@
 [ext_resource path="res://models/model.fbx" type="PackedScene" id=8]
 [ext_resource path="res://face.fbx" type="PackedScene" id=9]
 [ext_resource path="res://main.gd" type="Script" id=10]
-[ext_resource path="res://Pirate_Flag.jpg" type="Texture" id=11]
+[ext_resource path="res://Flag.tscn" type="PackedScene" id=11]
+[ext_resource path="res://gun.tscn" type="PackedScene" id=12]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("VR/Headset/HUD/Viewport")
@@ -51,6 +52,9 @@ move_speed = 5.0
 material/0 = SubResource( 2 )
 
 [node name="HUD" parent="VR/Headset/HUD/Viewport" index="0" instance=ExtResource( 4 )]
+
+[node name="gun" parent="VR/LeftController/LeftHandModel" index="1" instance=ExtResource( 12 )]
+transform = Transform( -0.869802, -8.35025e-08, 1.80096, 7.7883e-07, -2, 2.83417e-07, 1.80096, 8.24577e-07, 0.869802, 0.188661, 2.07567, 0.350517 )
 
 [node name="sword" parent="VR/RightController/RightHandModel" index="1" instance=ExtResource( 7 )]
 transform = Transform( 3.57747e-08, 0, 3, 0, 3, 0, -3, 0, 3.57747e-08, -0.0699997, 0, 0 )
@@ -97,12 +101,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17989, 1.56803, -5.97121 )
 [node name="face" parent="." instance=ExtResource( 9 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 3.10295, 3.95731, -9.14856 )
 
-[node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( -0.00187613, 0, 0.0599894, 0, 0.08, 0, -0.0999824, 0, -0.00112568, -2.04046, 16.8923, -3.95299 )
-texture = ExtResource( 11 )
-
-[node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform( -0.00187613, 0, 0.0599894, 0, 0.08, 0, -0.0999824, 0, -0.00112568, -2.30631, 16.8923, -3.95299 )
-texture = ExtResource( 11 )
+[node name="Flag" parent="." instance=ExtResource( 11 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14077, 4.40881, -3.75959 )
 
 [editable path="VR"]
