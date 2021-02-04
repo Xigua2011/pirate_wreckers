@@ -1,6 +1,10 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://gun.fbx" type="PackedScene" id=1]
+[ext_resource path="res://Gun.gd" type="Script" id=2]
 
-[node name="gun" instance=ExtResource( 1 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.606452, -3.27502, 0.23792 )
+[node name="Gun" type="Spatial"]
+script = ExtResource( 2 )
+
+[node name="gun" parent="." instance=ExtResource( 1 )]
+transform = Transform( -1.78266, -1.05472e-07, -2.41291, 1.05472e-07, 3, -2.09057e-07, 2.41291, -2.09057e-07, -1.78266, -0.576899, -3.35236, 0.00202107 )
