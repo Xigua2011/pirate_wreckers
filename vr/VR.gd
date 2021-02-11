@@ -152,12 +152,12 @@ func _process_mouse_rotation():
 	$Headset.rotate_object_local(Vector3(1,0,0), deg2rad(-_pitch))
 	
 	$LeftController.transform = $Headset.transform
-	$LeftController.translate(Vector3(-0.2,-0.1,-0.2))
+	$LeftController.translate(Vector3(-0.3,-0.1,-0.2))
 	#$LeftController.rotation = $Headset.rotation
 	#$LeftController.translation = Vector3(-0.2,-0.1,-0.2).rotated(Vector3.RIGHT, $LeftController.rotation.x).rotated(Vector3.UP, $LeftController.rotation.y)
 	
 	$RightController.transform = $Headset.transform
-	$RightController.translate(Vector3(0.2,-0.1,-0.2))
+	$RightController.translate(Vector3(0.3,-0.1,-0.2))
 	
 
 

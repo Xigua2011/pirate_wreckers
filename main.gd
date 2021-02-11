@@ -22,3 +22,10 @@ func _process(delta):
 		if y < -0.5:
 			print('down')
 			$"VR".translation.y += -0.1
+			
+	if Input.is_action_pressed("Move up"):
+		print("move up")
+		$"VR".translation.y += 0.1
+	if Input.is_action_pressed("Move down"):
+		print("move down")
+		$"VR".translation.y += -0.1
