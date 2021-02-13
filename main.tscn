@@ -47,7 +47,6 @@ script = ExtResource( 10 )
 
 [node name="VR" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.236, 6.786, 0 )
-move_speed = 5.0
 
 [node name="HUD" parent="VR/Headset" index="0"]
 material/0 = SubResource( 2 )
