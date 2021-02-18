@@ -18,3 +18,11 @@ func _ready():
 
 func _on_face_area_entered(area):
 	$AnimationPlayer.play("Shrink")
+	Globals.score += 1
+	
+
+func _on_AnimationPlayer_animation_finished(anim_name):
+	if anim_name == "Shrink":
+		print("Finished Shrinking")
+		$AnimationPlayer.play("Normal")
+		translate(Vector3(randf()*20 - 10,0,0))

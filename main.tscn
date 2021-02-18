@@ -22,7 +22,7 @@ flags_transparent = true
 flags_unshaded = true
 albedo_texture = SubResource( 1 )
 
-[sub_resource type="ProceduralSky" id=4]
+[sub_resource type="ProceduralSky" id=3]
 sky_top_color = Color( 0.647059, 0.890196, 0.945098, 1 )
 sky_curve = 0.0931739
 ground_bottom_color = Color( 0.105882, 0.278431, 0.945098, 1 )
@@ -31,14 +31,14 @@ sun_color = Color( 1, 0.819608, 0, 1 )
 sun_longitude = 19.06
 sun_energy = 34.13
 
-[sub_resource type="Environment" id=5]
+[sub_resource type="Environment" id=4]
 background_mode = 2
-background_sky = SubResource( 4 )
+background_sky = SubResource( 3 )
 ambient_light_energy = 0.0
 adjustment_enabled = true
 adjustment_saturation = 1.7
 
-[sub_resource type="SpatialMaterial" id=8]
+[sub_resource type="SpatialMaterial" id=5]
 albedo_color = Color( 0.341176, 0.384314, 0.819608, 0 )
 metallic_specular = 1.0
 emission_enabled = true
@@ -48,16 +48,16 @@ emission_operator = 0
 emission_on_uv2 = false
 
 [sub_resource type="PlaneMesh" id=6]
-material = SubResource( 8 )
+material = SubResource( 5 )
 
 [sub_resource type="ConvexPolygonShape" id=7]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
-[sub_resource type="SpatialMaterial" id=11]
+[sub_resource type="SpatialMaterial" id=8]
 albedo_color = Color( 1, 0.878431, 0.717647, 1 )
 
 [sub_resource type="PlaneMesh" id=9]
-material = SubResource( 11 )
+material = SubResource( 8 )
 
 [sub_resource type="ConvexPolygonShape" id=10]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
@@ -89,7 +89,7 @@ shadow_enabled = true
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.0623345, -2.49039 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 5 )
+environment = SubResource( 4 )
 
 [node name="pirate_crew" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.17672, 0.950592, -3.42065 )
@@ -156,6 +156,6 @@ transform = Transform( 2.14664, -0.698565, 0, 2.0957, 0.715546, 0, 0, 0, 1, -8.7
 shape = SubResource( 10 )
 
 [node name="face" parent="." instance=ExtResource( 9 )]
-transform = Transform( 2.54328, 0, -1.59113, 0, 3, 0, 1.59113, 0, 2.54328, 1.2437, 3.39975, -8.67723 )
+transform = Transform( 0.673833, 0, -2.92334, 0, 3, 0, 2.92334, 0, 0.673833, 3.96386, 5.53731, -8.67723 )
 
 [editable path="VR"]
