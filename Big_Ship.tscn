@@ -405,6 +405,7 @@ material/0 = null
 
 [node name="cannon_left 1" type="MeshInstance" parent="ship_light_8angles"]
 transform = Transform( 0, 0, 1, 0, 1, 0, -1, 0, 0, -0.760401, 1.2774, -1.68106 )
+visible = false
 mesh = SubResource( 10 )
 material/0 = null
 material/1 = null
@@ -440,12 +441,13 @@ material/1 = null
 
 [node name="cannon_right 1" type="MeshInstance" parent="ship_light_8angles"]
 transform = Transform( 0, 0, -1, 0, 1, 0, 1, 0, 0, 0.760401, 1.2774, -1.68106 )
+visible = false
 mesh = SubResource( 10 )
 material/0 = null
 material/1 = null
 
 [node name="cannon_right 1 2" type="MeshInstance" parent="ship_light_8angles/cannon_right 1"]
-transform = Transform( 1, -1.26218e-29, -2.01085e-28, -6.00653e-30, 0.995725, -0.0923706, 2.01391e-28, 0.0923706, 0.995725, -2.88765e-15, 0.443968, -0.0674684 )
+transform = Transform( 1, -1.26218e-29, -2.01085e-28, -6.00653e-30, 0.995725, -0.0923706, 2.01391e-28, 0.0923706, 0.995725, 0, 0.443968, -0.0674684 )
 mesh = SubResource( 9 )
 material/0 = null
 

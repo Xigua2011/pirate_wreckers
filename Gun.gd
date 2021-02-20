@@ -13,7 +13,6 @@ func _process(delta):
 	if Input.is_action_just_pressed("VR_LEFT_INDEX_TRIGGER") or Input.is_action_just_pressed("fire"):
 		var bullet = Bullet.instance()
 		bullet.transform = self.get_global_transform()
-#		bullet.translate(Vector3(0,10,0))
 		get_tree().current_scene.add_child(bullet)
 		$AudioStreamPlayer3D.play()
 		print("bullet")
