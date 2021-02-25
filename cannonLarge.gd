@@ -34,7 +34,8 @@ var Bullet = preload("res://Cannon_Ball.tscn")
 func _on_Button_Fire_area_entered(area):
 	var bullet = Bullet.instance()
 	bullet.transform = self.get_global_transform()
-	bullet.apply_central_impulse(Vector3(-50,0,0))
+	
+	bullet.apply_central_impulse(transform.basis.z * -50)
 	get_tree().current_scene.add_child(bullet)
 
 
