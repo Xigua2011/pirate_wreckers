@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=2]
+[gd_scene load_steps=25 format=2]
 
 [ext_resource path="res://vr/VR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Big_Ship.tscn" type="PackedScene" id=2]
@@ -13,6 +13,7 @@
 [ext_resource path="res://Flag.tscn" type="PackedScene" id=11]
 [ext_resource path="res://Gun.tscn" type="PackedScene" id=12]
 [ext_resource path="res://cannonLarge.tscn" type="PackedScene" id=13]
+[ext_resource path="res://sword_scimitar.tscn" type="PackedScene" id=14]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("VR/Headset/HUD/Viewport")
@@ -67,7 +68,7 @@ points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 script = ExtResource( 10 )
 
 [node name="VR" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 6.43321, -7.98608 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 198.66, -7.98608 )
 move_speed = 40.0
 jump = Vector3( 0, 600, 0 )
 
@@ -84,13 +85,19 @@ bullet_speed = 100
 
 [node name="sword" parent="VR/RightController/RightHandModel" index="1" instance=ExtResource( 7 )]
 transform = Transform( -6.46434e-08, -4.84991, 1.59057, -6.74577e-08, 6.36226, 1.21248, -2, -5.78347e-08, -9.23053e-08, 0, 0.0999999, 0 )
+visible = false
+
+[node name="sword_scimitar" parent="VR/RightController/RightHandModel" index="2" instance=ExtResource( 14 )]
+transform = Transform( 2.44663, -1.73609, -6.59893e-09, 1.73609, 2.44663, 2.07027e-08, -6.59893e-09, -2.07027e-08, 3, 0, 0.184987, 0 )
+collision_layer = 2
+collision_mask = 2
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( 0.796636, -2.41867e-07, -0.60446, -0.0301284, -0.998757, -0.0397067, -0.603709, 0.0498432, -0.795645, -0.165102, -0.983891, 6.03818 )
 shadow_enabled = true
 
 [node name="ship_light" parent="." instance=ExtResource( 2 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0, -0.0623345, -2.49039 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.576126, 0.97861, -2.87956 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
