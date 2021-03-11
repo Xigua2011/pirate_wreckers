@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://Flag.gd" type="Script" id=1]
 [ext_resource path="res://Pirate_Flag.jpg" type="Texture" id=2]
+[ext_resource path="res://Sounds/Drunken Sailer.ogg" type="AudioStream" id=3]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 0.137961, 0.477379, 0.954892 )
@@ -40,4 +41,7 @@ shape = SubResource( 1 )
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Flag"]
 "anims/Move Up" = SubResource( 2 )
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource( 3 )
 [connection signal="area_entered" from="Flag" to="." method="_on_Flag_area_entered"]

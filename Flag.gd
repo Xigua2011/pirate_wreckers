@@ -18,3 +18,4 @@ func _ready():
 
 func _on_Flag_area_entered(area):
 	$Flag/AnimationPlayer.play("Move Up")
+	$AudioStreamPlayer.play()

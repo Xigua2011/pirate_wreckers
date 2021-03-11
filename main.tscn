@@ -97,7 +97,7 @@ transform = Transform( 0.796636, -2.41867e-07, -0.60446, -0.0301284, -0.998757, 
 shadow_enabled = true
 
 [node name="ship_light" parent="." instance=ExtResource( 2 )]
-transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.576126, 0.97861, -2.87956 )
+transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.576126, -0.0774003, -2.87956 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
@@ -127,7 +127,7 @@ transform = Transform( 1, 0, 0, 0, 0.221855, 0.97508, 0, -0.97508, 0.221855, -1.
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.17989, 1.56803, -5.97121 )
 
 [node name="Flag" parent="." instance=ExtResource( 11 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14077, 4.40881, -3.75959 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.58588, 4.40881, -3.75959 )
 
 [node name="Ocean" type="StaticBody" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -5.76917, -2.16439, -15.4211 )
@@ -143,7 +143,7 @@ transform = Transform( 1000, 0, 0, 0, 1000, 0, 0, 0, 1000, 0, 0, 0 )
 shape = SubResource( 7 )
 
 [node name="Ladder" type="StaticBody" parent="."]
-transform = Transform( 1.92236, 0.551845, 0, -0.551845, 1.92236, 0, 0, 0, 1, 4.50908, -6.80864, -0.11298 )
+transform = Transform( 1.90681, 0.603375, 5.16629e-05, -0.603374, 1.90681, 0.00191917, 0.00105947, -0.00369066, 0.999998, 5.14926, -6.80864, -0.11298 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ladder"]
 transform = Transform( 2.14664, -0.698565, 0, 2.0957, 0.715546, 0, 0, 0, 1, -8.75785, 1.54972, -4.94836 )
@@ -155,7 +155,7 @@ transform = Transform( 2.14664, -0.698565, 0, 2.0957, 0.715546, 0, 0, 0, 1, -8.7
 shape = SubResource( 10 )
 
 [node name="Ladder2" type="StaticBody" parent="."]
-transform = Transform( -1.87466, -0.692789, -0.037732, -0.695206, 1.87417, 0.0322649, 0.0483637, 0.0867172, -0.998767, -7.97955, -7.6688, -9.87682 )
+transform = Transform( -1.87466, -0.692789, -0.037732, -0.695206, 1.87417, 0.0322649, 0.0483637, 0.0867172, -0.998767, -7.65992, -7.52126, -10.4056 )
 
 [node name="MeshInstance" type="MeshInstance" parent="Ladder2"]
 transform = Transform( 2.14664, -0.698565, 0, 2.0957, 0.715546, 0, -1.49012e-08, -3.72529e-09, 1, -8.75785, 1.54972, -4.94836 )
