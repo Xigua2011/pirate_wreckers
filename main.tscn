@@ -68,7 +68,7 @@ points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 script = ExtResource( 10 )
 
 [node name="VR" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 198.66, -7.98608 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 6.2078, -7.98608 )
 move_speed = 40.0
 jump = Vector3( 0, 600, 0 )
 

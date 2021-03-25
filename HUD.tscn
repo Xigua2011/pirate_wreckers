@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://HUD.gd" type="Script" id=1]
+[ext_resource path="res://Fonts/RobotoMono-VariableFont_wght.ttf" type="DynamicFontData" id=2]
+
+[sub_resource type="DynamicFont" id=1]
+size = 160
+font_data = ExtResource( 2 )
 
 [node name="HUD" type="Node2D"]
 script = ExtResource( 1 )
@@ -48,7 +53,7 @@ margin_left = 495.437
 margin_top = 310.484
 margin_right = 534.437
 margin_bottom = 341.484
-rect_scale = Vector2( 10, 10 )
+custom_fonts/font = SubResource( 1 )
 text = "Score:
 "
 __meta__ = {
