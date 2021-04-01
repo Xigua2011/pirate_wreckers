@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=2]
+[gd_scene load_steps=26 format=2]
 
 [ext_resource path="res://vr/VR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Big_Ship.tscn" type="PackedScene" id=2]
@@ -64,13 +64,16 @@ material = SubResource( 8 )
 [sub_resource type="ConvexPolygonShape" id=10]
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
+[sub_resource type="SpatialMaterial" id=11]
+albedo_color = Color( 0.207843, 0.176471, 0.152941, 0 )
+
 [node name="Main" type="Spatial"]
 script = ExtResource( 10 )
 
 [node name="VR" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 6.2078, -7.98608 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 4.72847, -6.39301 )
 move_speed = 40.0
-jump = Vector3( 0, 600, 0 )
+jump = Vector3( 0, 1000, 0 )
 
 [node name="HUD" parent="VR/Headset" index="0"]
 material/0 = SubResource( 2 )
@@ -98,6 +101,8 @@ shadow_enabled = true
 
 [node name="ship_light" parent="." instance=ExtResource( 2 )]
 transform = Transform( 3, 0, 0, 0, 3, 0, 0, 0, 3, 0.576126, -0.0774003, -2.87956 )
+collision_layer = 0
+collision_mask = 2147483648
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource( 4 )
@@ -180,5 +185,89 @@ transform = Transform( -0.0928708, 0, -2.99856, 0, 3, 0, 2.99856, 0, -0.0928708,
 
 [node name="cannonLarge3" parent="." instance=ExtResource( 13 )]
 transform = Transform( -0.0928708, 0, -2.99856, 0, 3, 0, 2.99856, 0, -0.0928708, 0.294209, 5.34882, -2.52687 )
+
+[node name="CSGCombiner" type="CSGCombiner" parent="."]
+transform = Transform( -0.0799381, 0, 0.9968, 0, 1, 0, -0.9968, 0, -0.0799381, 14.1224, 1.95726, -5.09449 )
+material_override = SubResource( 11 )
+use_collision = true
+
+[node name="CSGBox" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 9.9845, 0, -0.556473, 0, 10, 0, 0.556473, 0, 9.9845, 1.58338, -0.652613, -15.8082 )
+width = 2.4236
+height = 0.480335
+depth = 0.89022
+
+[node name="CSGBox2" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 9.9845, 0, -0.556473, 0, 10, 0, 0.556473, 0, 9.9845, -7.34928, 3.51971, -16.5246 )
+width = 0.652182
+height = 0.268488
+depth = 0.843797
+
+[node name="CSGBox3" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 9.9845, 0, -0.556473, 0, 10, 0, 0.556473, 0, 9.9845, -1.01698, -0.353526, -16.0168 )
+operation = 2
+width = 0.291176
+height = 0.524129
+depth = 0.430924
+
+[node name="CSGBox5" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 9.9845, 0, -0.556473, 0, 10, 0, 0.556473, 0, 9.9845, 1.60423, -0.353526, -15.8678 )
+operation = 2
+width = 0.291176
+height = 0.524129
+depth = 0.439114
+
+[node name="CSGBox6" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 6.68339, 0, 7.43857, 0, 10, 0, -7.43857, 0, 6.68339, 13.4563, -0.806917, -10.402 )
+operation = 2
+width = 0.554257
+height = 0.524129
+depth = 0.439114
+
+[node name="CSGBox7" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( -5.47256, 0, 8.36964, 0, 10, 0, -8.36964, 0, -5.47256, 14.014, -0.870875, -19.7856 )
+operation = 2
+width = 0.554257
+height = 0.524129
+depth = 0.439114
+
+[node name="CSGBox4" type="CSGBox" parent="CSGCombiner"]
+transform = Transform( 9.9845, 0, -0.556473, 0, 10, 0, 0.556473, 0, 9.9845, -3.92087, -0.353526, -16.1883 )
+operation = 2
+width = 0.291176
+height = 0.524129
+depth = 0.434362
+
+[node name="CSGCylinder" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 1.50562, 9.21491, -15.5422 )
+radius = 0.420424
+height = 14.8473
+
+[node name="CSGCylinder2" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -8.64543, 10.1423, -16.3563 )
+radius = 0.420424
+height = 14.8473
+
+[node name="CSGCylinder3" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 6.46134, 6.98109, -15.1448 )
+radius = 0.420424
+height = 9.25027
+
+[node name="CSGPolygon" type="CSGPolygon" parent="CSGCombiner"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 11.3197, 2.2264, -14.1916 )
+polygon = PoolVector2Array( -0.00673199, 0.0151858, 0.00814724, 0.577377, 2.21975, 0.645566, 1, 0 )
+
+[node name="CSGCylinder5" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 0.0799381, 4.46476e-05, -0.9968, 0.000558527, -1, 0, -0.9968, -0.00055674, -0.0799381, 1.54773, 11.9209, -15.5014 )
+radius = 1.93541
+height = 3.16654
+cone = true
+
+[node name="CSGCylinder4" type="CSGCylinder" parent="CSGCombiner"]
+transform = Transform( 0.0799381, 4.46476e-05, -0.9968, 0.000558527, -1, 0, -0.9968, -0.00055674, -0.0799381, 1.54773, 12.1724, -15.5014 )
+operation = 2
+radius = 1.75706
+height = 2.70727
+cone = true
 
 [editable path="VR"]
