@@ -65,6 +65,7 @@ material = SubResource( 8 )
 points = PoolVector3Array( 1, 0, 1, -1, 0, 1, 1, 0, -1, -1, 0, -1 )
 
 [sub_resource type="SpatialMaterial" id=11]
+flags_transparent = true
 albedo_color = Color( 0.207843, 0.176471, 0.152941, 0 )
 
 [node name="Main" type="Spatial"]

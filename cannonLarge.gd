@@ -34,6 +34,7 @@ var Bullet = preload("res://Cannon_Ball.tscn")
 func _on_Button_Fire_area_entered(area):
 	var bullet = Bullet.instance()
 	bullet.transform = self.get_global_transform()
+	$AudioStreamPlayer3D.play()
 	
 	bullet.apply_central_impulse(transform.basis.z * -50)
 	get_tree().current_scene.add_child(bullet)

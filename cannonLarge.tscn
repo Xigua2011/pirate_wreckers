@@ -1,8 +1,9 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=11 format=2]
 
 [ext_resource path="res://Pirate Blocks/cannonLarge.gltf" type="PackedScene" id=1]
 [ext_resource path="res://cannonLarge.gd" type="Script" id=2]
 [ext_resource path="res://green_material.tres" type="Material" id=3]
+[ext_resource path="res://Sounds/boom.wav" type="AudioStream" id=4]
 
 [sub_resource type="CubeMesh" id=1]
 material = ExtResource( 3 )
@@ -102,6 +103,11 @@ material/0 = null
 [node name="CollisionShape" type="CollisionShape" parent="Button_Fire" index="1"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.350054, 0, 0 )
 shape = SubResource( 2 )
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="." index="7"]
+stream = ExtResource( 4 )
+unit_db = -12.371
+max_db = 3.0
 [connection signal="area_entered" from="Button_Right" to="." method="_on_Button_Right_area_entered"]
 [connection signal="area_entered" from="Button_Left" to="." method="_on_Button_Left_area_entered"]
 [connection signal="area_entered" from="Button_Up" to="." method="_on_Button_Up_area_entered"]
