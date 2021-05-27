@@ -3,6 +3,9 @@
 # Fix Viewport errors
 # Teleportation
 # Prevent walking through
+# why are pngs so large?
+# p
+
 extends ARVROrigin
 
 var ovr_init_config = null;
@@ -66,6 +69,7 @@ var drone_vel = Vector3()
 	
 
 func _ready():
+	_setup_input_events()
 	setup_HUD()
 	
 	var args = OS.get_cmdline_args()
@@ -88,7 +92,13 @@ func _ready():
 			_:
 				_autodetect_vr()
 
-
+func _setup_input_events():
+	InputMap.add_action("VR_SCREEN_TAP")
+	InputMap.add_action("jump")
+	for button in CONTROLLER_BUTTON.keys():
+		print("Adding "+button)
+		InputMap.add_action("VR_LEFT_"+button)
+		InputMap.add_action("VR_RIGHT_"+button)
 	
 	
 func _autodetect_vr():
@@ -133,7 +143,7 @@ func _input(event):
 			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 		
 
-func _process(delta_t):
+func _physics_process(delta_t):
 	_move_drone()
 	_check_and_perform_runtime_config()
 	_check_move(delta_t)
@@ -144,8 +154,19 @@ func _process(delta_t):
 	else:
 		_process_6dof_joystick_turns()
 	_process_keys()
+#
+#func _process(delta_t):
+#	_move_drone()
+#	_check_and_perform_runtime_config()
+#	_check_move(delta_t)
+#	#_check_worldscale()
+#	_update_controllers_vibration(delta_t)
+#	if fix_hand_position: 
+#		_process_mouse_rotation()
+#	else:
+#		_process_6dof_joystick_turns()
+#	_process_keys()
 	
-
 	
 func _move_drone():
 	if drone == null:
@@ -424,9 +445,11 @@ func _check_move(delta_t):
 	drone_vel.z = lerp(drone_vel.z, 0, 0.1)
 	
 		
-	if drone.is_on_floor():
+	jump_timer -= delta_t
+	if drone.is_on_floor() and jump_timer<0:
 		if $LeftController.is_button_pressed(CONTROLLER_BUTTON.THUMBSTICK) or Input.is_action_just_pressed("jump"):
 			drone_vel += jump * delta_t
+			jump_timer = 0.2
 
 	var drone_start = drone.translation
 	drone_vel += gravity * delta_t
@@ -435,7 +458,7 @@ func _check_move(delta_t):
 	self.translate(drone_moved)
 
 			
-
+var jump_timer = 0
 
 
 func _start_controller_vibration(controller, duration, rumble_intensity):
@@ -562,6 +585,7 @@ func _on_RightController_button_pressed(button):
 	var action = "VR_RIGHT_"+CONTROLLER_BUTTON.keys()[button]
 	print("PRESSED: "+action)
 	Input.action_press(action)
+
 	
 #	if (button == CONTROLLER_BUTTON.YB):
 #		print("rumble test")
@@ -581,6 +605,7 @@ func _on_RightController_button_release(button):
 	var action = "VR_RIGHT_"+CONTROLLER_BUTTON.keys()[button]
 	print("RELEASED: "+action)
 	Input.action_release(action)	
+	
 #	if (button != CONTROLLER_BUTTON.YB): return;
 #
 #	if (ovr_utilities):

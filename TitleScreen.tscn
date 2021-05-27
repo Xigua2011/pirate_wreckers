@@ -68,6 +68,7 @@ shape = SubResource( 7 )
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource( 2 )
 autoplay = true
+
 [connection signal="mesh_updated" from="VR/LeftController" to="VR" method="_on_LeftController_mesh_updated"]
 
 [editable path="VR"]
