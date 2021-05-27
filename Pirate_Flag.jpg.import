@@ -3,16 +3,17 @@
 importer="texture"
 type="StreamTexture"
 path.s3tc="res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.s3tc.stex"
+path.etc2="res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.etc2.stex"
 path.etc="res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.etc.stex"
 metadata={
-"imported_formats": [ "s3tc", "etc" ],
+"imported_formats": [ "s3tc", "etc2", "etc" ],
 "vram_texture": true
 }
 
 [deps]
 
 source_file="res://Pirate_Flag.jpg"
-dest_files=[ "res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.s3tc.stex", "res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.etc.stex" ]
+dest_files=[ "res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.s3tc.stex", "res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.etc2.stex", "res://.import/Pirate_Flag.jpg-1ffa4a5357c1bae4b47a8705d6c729a3.etc.stex" ]
 
 [params]
 

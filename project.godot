@@ -49,6 +49,10 @@ window/size/height=720
 
 singletons=[ "res://addons/godot-oculus/godot_oculus.gdnlib", "res://addons/godot-openvr/godot_openvr.gdnlib", "res://addons/godot_ovrmobile/godot_ovrmobile.gdnlib" ]
 
+[global]
+
+etc=false
+
 [importer_defaults]
 
 scene={
@@ -1205,4 +1209,3 @@ pointing/emulate_mouse_from_touch=false
 [rendering]
 
 vram_compression/import_etc=true
-vram_compression/import_etc2=false
