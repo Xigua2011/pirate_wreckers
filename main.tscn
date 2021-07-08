@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=2]
+[gd_scene load_steps=27 format=2]
 
 [ext_resource path="res://vr/VR.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Big_Ship.tscn" type="PackedScene" id=2]
@@ -14,6 +14,7 @@
 [ext_resource path="res://gun.tscn" type="PackedScene" id=12]
 [ext_resource path="res://cannonLarge.tscn" type="PackedScene" id=13]
 [ext_resource path="res://sword_scimitar.tscn" type="PackedScene" id=14]
+[ext_resource path="res://enemy_ship.tscn" type="PackedScene" id=16]
 
 [sub_resource type="ViewportTexture" id=1]
 viewport_path = NodePath("VR/Headset/HUD/Viewport")
@@ -72,7 +73,7 @@ albedo_color = Color( 0.207843, 0.176471, 0.152941, 0 )
 script = ExtResource( 10 )
 
 [node name="VR" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -2.3747, 4.72847, -6.39301 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -1.51325, 8.30905, -15.9992 )
 move_speed = 40.0
 jump = Vector3( 0, 1000, 0 )
 
@@ -89,7 +90,6 @@ bullet_speed = 100
 
 [node name="sword" parent="VR/RightController/RightHandModel" index="1" instance=ExtResource( 7 )]
 transform = Transform( -6.46434e-08, -4.84991, 1.59057, -6.74577e-08, 6.36226, 1.21248, -2, -5.78347e-08, -9.23053e-08, 0, 0.0999999, 0 )
-visible = false
 
 [node name="sword_scimitar" parent="VR/RightController/RightHandModel" index="2" instance=ExtResource( 14 )]
 transform = Transform( 2.44663, -1.73609, -6.59893e-09, 1.73609, 2.44663, 2.07027e-08, -6.59893e-09, -2.07027e-08, 3, 0, 0.184987, 0 )
@@ -270,5 +270,8 @@ operation = 2
 radius = 1.75706
 height = 2.70727
 cone = true
+
+[node name="enemy_ship" parent="." instance=ExtResource( 16 )]
+transform = Transform( -2.99978, 0, -0.0360226, 0, 3, 0, 0.0360226, 0, -2.99978, 25.514, -0.0825899, -2.98919 )
 
 [editable path="VR"]

@@ -22,14 +22,14 @@ radius = 0.0991073
 [sub_resource type="ParticlesMaterial" id=4]
 direction = Vector3( 0, 1, 0 )
 gravity = Vector3( 0, -10, 0 )
-initial_velocity = 10.0
+initial_velocity = 7.0
 
-[sub_resource type="SpatialMaterial" id=6]
+[sub_resource type="SpatialMaterial" id=5]
 flags_transparent = true
 albedo_color = Color( 0.117647, 1, 1, 0.752941 )
 
-[sub_resource type="SphereMesh" id=5]
-material = SubResource( 6 )
+[sub_resource type="SphereMesh" id=6]
+material = SubResource( 5 )
 radius = 0.25
 height = 0.5
 
@@ -53,10 +53,12 @@ autostart = true
 [node name="Particles" type="Particles" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0138264, 0, 0.0528946 )
 emitting = false
-amount = 200
+amount = 100
 lifetime = 3.11
 one_shot = true
 explosiveness = 1.0
+local_coords = false
 process_material = SubResource( 4 )
-draw_pass_1 = SubResource( 5 )
+draw_pass_1 = SubResource( 6 )
+
 [connection signal="timeout" from="Timer" to="." method="_on_Timer_timeout"]

@@ -5,6 +5,7 @@ extends RigidBody
 # var a = 2
 # var b = "text"
 
+var hit_water = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -13,8 +14,9 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if transform.origin.y < 0:
+	if transform.origin.y < 0 and not hit_water:
 		$Particles.restart()
+		hit_water = true
 
 
 func _on_Timer_timeout():
